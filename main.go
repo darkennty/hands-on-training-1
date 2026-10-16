@@ -24,6 +24,7 @@ var (
 // grep: grep [опции] шаблон [<путь к файлу или папке>]
 // use: go run main.go -B 2 -A 4 -c -n -F -v -i 'auth' testdata.txt
 // use 2: go run . -i downloads testdata.txt
+// unnecessary comment
 func main() {
 	AFlag = flag.Int("A", 0, "Print NUM lines of trailing context after matching lines.")
 	BFlag = flag.Int("B", 0, "Print NUM lines of leading context before matching lines.")
