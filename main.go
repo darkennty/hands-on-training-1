@@ -45,7 +45,7 @@ func main() {
 
 	os.Args = os.Args[:len(os.Args)-2]
 
-	flag.Parse()
+	flag.Parse() // парсим флаги
 
 	if *AFlag == 0 && *CFlag != 0 {
 		*AFlag = *CFlag
