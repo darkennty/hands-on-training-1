@@ -24,3 +24,7 @@ drwxr-xr-x  2   root    root    4096    Sep 5   2019    openvpn
 drwxr-xr-x  2   root    root    4096    Sep 5   2019    openvpn
 drwxr-xr-x  2   root    root    4096    Sep 5   2019    openvpn
 drwxr-xr-x  2   root    root    4096    Sep 5   2019    openvpn
+-rwxrwxrwx  1   root    root    10723   Mar 6   23:53   Documents
+-rwxrwxrwx  1   root    root    10723   Mar 6   23:53   Documents
+-rwxrwxrwx  1   root    root    10723   Mar 6   23:53   Documents
+-rwxrwxrwx  1   root    root    10723   Mar 6   23:53   Documents
