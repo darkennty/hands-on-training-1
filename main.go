@@ -36,7 +36,7 @@ func main() {
 	nFlag = flag.Bool("n", false, "Prefix each line of output with the 1-based line number within its input file.")
 
 	if len(os.Args) < 3 {
-		log.Fatal("Error: pattern and input filenames are required")
+		log.Fatal("error: pattern and input filenames are required")
 		return
 	}
 
@@ -56,7 +56,7 @@ func main() {
 	}
 
 	if len(os.Args) < flag.NFlag()+1 {
-		log.Fatal("Error: pattern and input filenames are required")
+		log.Fatal("error: pattern and input filenames are required")
 		return
 	}
 
@@ -64,7 +64,7 @@ func main() {
 
 	inputFile, err := os.Open(inputFileName)
 	if err != nil {
-		log.Fatal("can't open the file: ", err)
+		log.Fatal("error: can't open the file: ", err)
 	}
 	defer inputFile.Close()
 
