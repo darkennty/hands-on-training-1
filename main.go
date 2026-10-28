@@ -66,9 +66,14 @@ func main() {
 	if err != nil {
 		log.Fatal("error: can't open the file: ", err)
 	}
-	defer inputFile.Close()
+	defer func(inputFile *os.File) {
+		closeErr := inputFile.Close()
+		if closeErr != nil {
+			log.Fatal("error: can't close the file: ", closeErr)
+		}
+	}(inputFile)
 
-	strings.Trim(pattern, "'")
+	_ = strings.Trim(pattern, "'")
 
 	if *iFlag {
 		pattern = strings.ToLower(pattern)
