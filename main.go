@@ -79,11 +79,10 @@ func main() {
 		pattern = strings.ToLower(pattern)
 	}
 
-	if *FFlag {
-		pattern = strings.Join([]string{"^", pattern, "$"}, "")
+	var re *regexp.Regexp
+	if !*FFlag {
+		re = regexp.MustCompile(pattern)
 	}
-
-	re := regexp.MustCompile(pattern)
 
 	BSlice := make([]string, 0, *BFlag)
 	toPrint := 0
@@ -95,7 +94,12 @@ func main() {
 			line = strings.ToLower(line)
 		}
 
-		match := re.MatchString(line)
+		match := false
+		if *FFlag {
+			match = strings.Contains(line, pattern)
+		} else {
+			match = re.MatchString(line)
+		}
 
 		if *vFlag {
 			match = !match
