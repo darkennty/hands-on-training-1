@@ -37,7 +37,7 @@ func TestGrepPrintsMatchingLineNumbers(t *testing.T) {
 
 	output, err := runGrep(t, "-n", "auth", input)
 	assert.NoError(t, err)
-	assert.Equal(t, "1. auth event\n2. auth failed\n", output)
+	assert.Equal(t, "2. auth event\n4. auth failed\n", output)
 }
 
 func TestGrepFixedStringMatchesSubstring(t *testing.T) {

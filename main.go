@@ -84,11 +84,17 @@ func main() {
 		re = regexp.MustCompile(pattern)
 	}
 
-	BSlice := make([]string, 0, *BFlag)
+	type numberedLine struct {
+		text   string
+		number int
+	}
+	BSlice := make([]numberedLine, 0, *BFlag)
 	toPrint := 0
+	lineNumber := 0
 
 	scanner := bufio.NewScanner(inputFile)
 	for scanner.Scan() {
+		lineNumber++
 		line := scanner.Text()
 		if *iFlag {
 			line = strings.ToLower(line)
@@ -113,7 +119,7 @@ func main() {
 			matchingLinesCounter++
 			if !*cFlag {
 				if *nFlag {
-					fmt.Printf("%d. %s\n", matchingLinesCounter, line)
+					fmt.Printf("%d. %s\n", lineNumber, line)
 				} else {
 					fmt.Println(line)
 				}
@@ -134,9 +140,9 @@ func main() {
 
 					if !*cFlag {
 						if *nFlag {
-							fmt.Printf("%d. %s\n", matchingLinesCounter, BSlice[i])
+							fmt.Printf("%d. %s\n", BSlice[i].number, BSlice[i].text)
 						} else {
-							fmt.Println(BSlice[i])
+							fmt.Println(BSlice[i].text)
 						}
 					}
 				}
@@ -147,7 +153,7 @@ func main() {
 			matchingLinesCounter++
 			if !*cFlag {
 				if *nFlag {
-					fmt.Printf("%d. %s\n", matchingLinesCounter, line)
+					fmt.Printf("%d. %s\n", lineNumber, line)
 				} else {
 					fmt.Println(line)
 				}
@@ -157,7 +163,7 @@ func main() {
 				if len(BSlice) == *BFlag {
 					BSlice = BSlice[1:*BFlag:*BFlag]
 				}
-				BSlice = append(BSlice, line)
+				BSlice = append(BSlice, numberedLine{text: line, number: lineNumber})
 			}
 		}
 	}
