@@ -147,7 +147,7 @@ func main() {
 					}
 				}
 
-				BSlice = make([]string, 0, *BFlag)
+				BSlice = make([]numberedLine, 0, *BFlag)
 			}
 
 			matchingLinesCounter++
