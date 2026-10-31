@@ -26,7 +26,7 @@ var (
 // use 2: go run . -i downloads testdata.txt
 // unnecessary comment
 func main() {
-	AFlag = flag.Int("A", 0, "Print NUM lines of trailing context after matching lines.")
+	AFlag = flag.Int("A", 0, "Print NUM lines of trailing context after matching lines..")
 	BFlag = flag.Int("B", 0, "Print NUM lines of leading context before matching lines.")
 	CFlag = flag.Int("C", 0, "Print NUM lines of output context. Equivalent to '-A NUM -B NUM'.")
 	cFlag = flag.Bool("c", false, "Suppress normal output; instead print a count of matching lines for each input file. With the '-v' option, count non-matching lines.") // количество строк, которые соответствуют шаблону
